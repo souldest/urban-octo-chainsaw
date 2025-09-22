@@ -1,263 +1,563 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI & Data Solutions</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg-color:#f0f4f8;
-  --text-color:#475569;
-  --card-bg:#ffffff;
-  --button-bg-start:#0f4c81;
-  --button-bg-end:#10b981;
-  --transition-duration:0.5s;
-}
-body.dark {
-  --bg-color:#0f172a;
-  --text-color:#f1f5f9;
-  --card-bg:#1e293b;
-  --button-bg-start:#3b82f6;
-  --button-bg-end:#10b981;
-}
-body {
-  margin:0;
-  font-family:'Roboto', Arial, sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
-  transition: background var(--transition-duration), color var(--transition-duration);
-  scroll-behavior: smooth;
-}
-section { padding:80px 20px; max-width:1200px; margin:0 auto; }
-h2 { text-align:center; margin-bottom:50px; color:#0f4c81; font-weight:700; }
-p, li { font-size:1.05rem; }
-strong.company { font-weight:700; color:#0f4c81; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; }
-.ai-card { background:var(--card-bg); border-radius:20px; padding:30px; box-shadow:0 8px 16px rgba(0,0,0,0.1); transform:translateY(20px); opacity:0; transition: transform 0.6s ease, opacity 0.6s ease, background var(--transition-duration), color var(--transition-duration); border-top:6px solid; }
-.ai-card.visible { transform:translateY(0); opacity:1; }
-.ai-card h3 { margin-bottom:15px; text-align:center; }
-.ai-card:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 25px 35px rgba(0,0,0,0.25); transition: transform 0.4s ease, box-shadow 0.4s ease; }
-.ai-card:nth-child(1) { border-image: linear-gradient(90deg,#0f4c81,#3b82f6) 1; }
-.ai-card:nth-child(2) { border-image: linear-gradient(90deg,#10b981,#06b6d4) 1; }
-.ai-card:nth-child(3) { border-image: linear-gradient(90deg,#f59e0b,#facc15) 1; }
-.ai-card:nth-child(4) { border-image: linear-gradient(90deg,#e63946,#f87171) 1; }
-.ai-card:nth-child(5) { border-image: linear-gradient(90deg,#8b5cf6,#a78bfa) 1; }
-.ai-card:nth-child(6) { border-image: linear-gradient(90deg,#f472b6,#fda4af) 1; }
-.ai-card:nth-child(7) { border-image: linear-gradient(90deg,#14b8a6,#06b6d4) 1; }
-form { max-width:600px; margin:0 auto; text-align:left; }
-form label { display:block; margin-bottom:5px; }
-form input, form textarea { width:100%; padding:10px; margin-bottom:15px; border-radius:8px; border:1px solid #cbd5e1; font-size:1rem; background:inherit; color:inherit; transition: background var(--transition-duration), color var(--transition-duration); }
-form button { background: linear-gradient(90deg,var(--button-bg-start) 0%,var(--button-bg-end) 100%); color:#fff; padding:12px 25px; border:none; border-radius:8px; cursor:pointer; font-weight:500; transition: all var(--transition-duration); animation: pulse 2s infinite; }
-form button:hover { background: linear-gradient(90deg,#3b82f6 0%, #10b981 100%); transform: scale(1.08); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
-#successMessage { display:none; margin-top:20px; background: linear-gradient(90deg,#10b981 0%,#0f4c81 100%); color:#fff; padding:15px; border-radius:10px; font-weight:600; text-align:center; opacity:0; transition: opacity 0.5s ease, transform 0.3s ease; }
-#successMessage.show { display:block; opacity:1; transform:scale(1.05); animation: pulse 1.5s infinite; }
-.contact-info { text-align:center; margin-bottom:30px; }
-.contact-info a { color:#0f4c81; text-decoration:none; font-weight:500; }
-#themeToggle { position:fixed; top:20px; right:20px; background:#0f4c81; color:#fff; border:none; border-radius:50px; padding:10px 20px; cursor:pointer; z-index:1001; }
-header { position:fixed; top:0; width:100%; background:var(--bg-color); z-index:1000; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
-#nav-container { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; max-width:1200px; margin:0 auto; position:relative; }
-#nav-links { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; }
-#hamburger { display:none; background:none; border:none; font-size:1.8rem; margin-left:10px; cursor:pointer; color:var(--text-color); }
-@media(max-width:768px){
-  #nav-links { display:none; flex-direction:column; width:100%; text-align:center; background:var(--bg-color); position:absolute; top:60px; left:0; padding:20px 0; box-shadow:0 4px 12px rgba(0,0,0,0.1); border-radius:0 0 10px 10px; }
-  #nav-links.show { display:flex; }
-  #hamburger { display:block; }
-}
-@media (max-width:600px) { .ai-card { box-shadow:0 4px 8px rgba(0,0,0,0.08); } h2 { font-size:1.8rem; } }
-@keyframes pulse { 0% {transform:scale(1);} 50% {transform:scale(1.03);} 100% {transform:scale(1);} }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI & Data Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --surface:#0b1220;
+      --muted:#98a0ad;
+      --accent-1:#0f4c81;
+      --accent-2:#10b981;
+      --accent-3:#8b5cf6;
+      --card:#0f1724;
+      --glass: rgba(255,255,255,0.03);
+      --glass-strong: rgba(255,255,255,0.06);
+      --radius:14px;
+      --max-width:1200px;
+      --transition: 250ms cubic-bezier(.2,.9,.3,1);
+      color-scheme: dark;
+    }
+    /* Light theme overrides */
+    body.light {
+      --bg:#f4f7fb;
+      --surface:#ffffff;
+      --muted:#475569;
+      --accent-1:#0f4c81;
+      --accent-2:#10b981;
+      --accent-3:#8b5cf6;
+      --card:#ffffff;
+      --glass: rgba(15,20,36,0.02);
+      --glass-strong: rgba(15,20,36,0.04);
+      color-scheme: light;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Inter',system-ui,Arial,sans-serif;
+      background:linear-gradient(180deg, var(--bg), #071129 120%);
+      color: #e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      transition: background var(--transition), color var(--transition);
+    }
+    body.light {
+      color:#0b1220;
+      background: linear-gradient(180deg, #f8fbff, #eef6ff 120%);
+    }
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px;}
+
+    /* Header */
+    header.site-header{
+      position:sticky;top:0;z-index:60;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .site-header .container{display:flex;align-items:center;gap:18px;justify-content:space-between;padding:18px 22px;}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand .logo{
+      width:46px;height:46px;border-radius:10px;
+      background:linear-gradient(135deg,var(--accent-1),var(--accent-3));
+      display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:18px;box-shadow:0 6px 18px rgba(11,22,40,0.6);
+    }
+    .brand h1{font-size:1.05rem;margin:0;font-weight:700}
+    .nav{display:flex;gap:12px;align-items:center}
+    .nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600;font-size:0.95rem}
+    .nav a:hover{background:var(--glass-strong);color:var(--accent-1);transition:background var(--transition)}
+    .lang-switch{display:flex;gap:8px}
+    .lang-switch button{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:600}
+    .lang-switch button.active{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:white;border:none;box-shadow:0 8px 20px rgba(10,30,60,0.35)}
+    .controls{display:flex;gap:8px;align-items:center}
+
+    /* Hero */
+    .hero{padding:42px 22px 18px}
+    .hero-grid{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:26px;border-radius:16px;box-shadow:0 10px 30px rgba(2,6,23,0.6);}
+    .hero h2{margin:0;font-size:1.6rem;color:var(--accent-1)}
+    .hero p{color:var(--muted);margin-top:10px}
+    .cta-row{margin-top:18px;display:flex;gap:12px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:white;box-shadow:0 10px 30px rgba(16,185,129,0.12)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+    .small-note{font-size:0.9rem;color:var(--muted);margin-top:8px}
+
+    /* Sections */
+    section {padding:40px 0}
+    h3.section-title{font-size:1.25rem;margin:0 0 18px 0;color:var(--accent-1)}
+    .grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:20px;
+      border-top:6px solid transparent;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+      box-shadow: 0 6px 16px rgba(2,6,23,0.6);
+    }
+    .card h4{margin:0 0 8px 0;font-size:1.05rem}
+    .card p{margin:6px 0;color:var(--muted);font-size:0.95rem}
+    .card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(2,6,23,0.7)}
+
+    /* Card top gradients by index (only visual, repeats ok) */
+    .card[data-idx="1"]{border-image:linear-gradient(90deg,var(--accent-1),#3b82f6) 1}
+    .card[data-idx="2"]{border-image:linear-gradient(90deg,var(--accent-2),#06b6d4) 1}
+    .card[data-idx="3"]{border-image:linear-gradient(90deg,#f59e0b,#facc15) 1}
+    .card[data-idx="4"]{border-image:linear-gradient(90deg,#e63946,#f87171) 1}
+    .card[data-idx="5"]{border-image:linear-gradient(90deg,var(--accent-3),#a78bfa) 1}
+    .card[data-idx="6"]{border-image:linear-gradient(90deg,#f472b6,#fda4af) 1}
+    .card[data-idx="7"]{border-image:linear-gradient(90deg,#14b8a6,#06b6d4) 1}
+
+    /* Pricing table style inside cards */
+    .price{font-weight:800;font-size:1.05rem;color:var(--accent-1)}
+    .monthly{font-weight:700;color:var(--accent-2);font-size:0.95rem}
+
+    /* Contact form */
+    .form-card{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+    form .row{display:grid;gap:8px;margin-bottom:10px}
+    input[type="text"],input[type="email"],textarea{
+      width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);
+      background:transparent;color:inherit;font-size:0.95rem;outline:none;
+    }
+    input:focus,textarea:focus{box-shadow:0 8px 30px rgba(15,76,129,0.06);border-color:var(--accent-1)}
+
+    /* Footer */
+    footer.site-footer{padding:26px 0;border-top:1px solid rgba(255,255,255,0.03);text-align:center;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:960px){
+      .hero-grid{grid-template-columns:1fr;}
+      .lang-switch{display:none}
+    }
+    @media (max-width:520px){
+      .brand h1{font-size:0.95rem}
+      .hero h2{font-size:1.25rem}
+    }
+
+    /* fade-in animation */
+    .reveal{opacity:0;transform:translateY(10px);transition:opacity 420ms ease,var(--transition)}
+    .reveal.visible{opacity:1;transform:none}
+  </style>
 </head>
 <body>
+  <header class="site-header">
+    <div class="container" style="display:flex;align-items:center;gap:14px;">
+      <div class="brand" style="align-items:center">
+        <div class="logo" aria-hidden="true">AI</div>
+        <div>
+          <h1 style="margin:0">AI & Data Solutions</h1>
+          <div style="font-size:0.85rem;color:var(--muted)">Data Science · Machine Learning · Web Development</div>
+        </div>
+      </div>
 
-<button id="themeToggle">🌙 / ☀️</button>
+      <nav class="nav" style="margin-left:auto;">
+        <a href="#about-de">Über uns</a>
+        <a href="#services-de">Leistungen</a>
+        <a href="#ai-de">KI-Angebote</a>
+        <a href="#contact-de">Kontakt</a>
+      </nav>
 
-<header>
-  <nav id="nav-container">
-    <div id="nav-links">
-      <a href="#about-de">Über uns</a>
-      <a href="#services-de">Leistungen</a>
-      <a href="#ai-de">KI-Angebote</a>
-      <a href="#contact-de">Kontakt</a>
-      <a href="#impressum-de">Impressum</a>
-      <a href="#datenschutz-de">Datenschutz</a>
+      <div class="controls" style="margin-left:18px">
+        <div class="lang-switch" role="tablist" aria-label="Sprachen">
+          <button id="btn-de" class="active" aria-pressed="true">DE</button>
+          <button id="btn-en" aria-pressed="false">EN</button>
+          <button id="btn-fr" aria-pressed="false">FR</button>
+        </div>
+        <button id="themeToggle" title="Theme wechseln" style="margin-left:10px;padding:8px;border-radius:10px;border:none;background:transparent;color:var(--muted);cursor:pointer;font-weight:700">🌓</button>
+      </div>
     </div>
-    <button id="hamburger">☰</button>
-  </nav>
-</header>
+  </header>
 
-<div style="text-align:center; margin-top:100px;">
-  <button id="btn-de" style="margin:5px; padding:10px 20px;">Deutsch</button>
-  <button id="btn-en" style="margin:5px; padding:10px 20px;">English</button>
-  <button id="btn-fr" style="margin:5px; padding:10px 20px;">Français</button>
-</div>
+  <main class="container" style="padding-top:18px;">
 
-<!-- ==================== DEUTSCH ==================== -->
-<div id="content-de">
-  <section id="about-de">
-    <h2>Über uns</h2>
-    <p><strong class="company">AI & Data Solutions</strong> ist ein Team von erfahrenen Data Analysts, Data Scientists und Beratern mit über 15 Jahren Erfahrung. Wir entwickeln maßgeschneiderte Lösungen, die Unternehmen helfen, datengetrieben zu arbeiten, Prozesse zu optimieren und Wettbewerbsvorteile zu erzielen.</p>
-  </section>
+    <!-- HERO -->
+    <section class="hero reveal" id="hero">
+      <div class="hero-grid" >
+        <div class="hero-card">
+          <h2>Maßgeschneiderte KI- & Datenlösungen für bessere Geschäftsentscheidungen</h2>
+          <p>Wir kombinieren Strategie, Data Science und Engineering, um Prozesse zu automatisieren, Leads zu generieren und Entscheidungsqualität zu erhöhen — für KMUs ebenso wie für Enterprise.</p>
+          <div class="cta-row">
+            <button class="btn btn-primary" onclick="document.querySelector('#contact-de form').scrollIntoView({behavior:'smooth'})">Kontakt anfragen</button>
+            <button class="btn btn-ghost" onclick="showLang('en')">View in English</button>
+          </div>
+          <div class="small-note">Adresse: Obere Waibliner Str. 147, 70374 Stuttgart · Tel: +49 176 31591931</div>
+        </div>
 
-  <section id="services-de">
-    <h2>Leistungen</h2>
-    <div class="grid">
-      <div class="ai-card"><h3>Data Science & Analytics</h3><ul><li>Datenanalysen & Prognosemodelle</li><li>Klassifikations- & Vorhersagemodelle</li></ul></div>
-      <div class="ai-card"><h3>Machine Learning & KI</h3><ul><li>ML- & Deep-Learning-Modelle</li></ul></div>
-      <div class="ai-card"><h3>Business Intelligence</h3><ul><li>Dashboards (Power BI, Tableau)</li><li>Automatisiertes Reporting</li></ul></div>
-      <div class="ai-card"><h3>Datenmanagement</h3><ul><li>Datenintegration & ETL</li><li>Data Lakes & Warehouses</li></ul></div>
-      <div class="ai-card"><h3>Cloud & Deployment</h3><ul><li>Azure, AWS, Vercel</li><li>MLOps & CI/CD</li></ul></div>
-      <div class="ai-card"><h3>Beratung & Training</h3><ul><li>Strategie-Beratung</li><li>Workshops & Schulungen</li></ul></div>
-      <div class="ai-card"><h3>Homepage & Webentwicklung</h3><ul><li>Moderne Webseiten</li><li>Responsive Design</li></ul></div>
+        <aside class="hero-card" style="display:flex;flex-direction:column;gap:12px;">
+          <div style="font-weight:700">Kurzüberblick</div>
+          <div style="font-size:0.95rem;color:var(--muted)">Wir bieten: Strategie & Prozessanalyse • Data Science • ML/AI • Webentwicklung • Cloud & Deployment • Beratung & Training</div>
+          <div style="margin-top:auto">
+            <div style="font-size:0.85rem;color:var(--muted)">Schnellstarter-Paket</div>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <div style="background:linear-gradient(90deg,var(--accent-1),var(--accent-2));padding:10px;border-radius:10px;color:#fff;font-weight:700">Ab €5.000</div>
+              <div style="padding:10px;border-radius:10px;background:var(--glass)">Monatlich ab €140</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ======= GERMAN CONTENT ======= -->
+    <div id="content-de" class="lang-section" style="display:block">
+      <section id="about-de" class="reveal">
+        <h3 class="section-title">Über uns</h3>
+        <p><strong>AI & Data Solutions</strong> ist ein Team von erfahrenen Data Analysts, Data Scientists und Beratern mit über 15 Jahren Erfahrung in Datenanalyse, Statistik, Machine Learning, Data Engineering und Generative AI. Wir entwickeln maßgeschneiderte Lösungen, die Unternehmen helfen, datengetrieben zu arbeiten, Prozesse zu optimieren und Wettbewerbsvorteile zu erzielen. Unser Know-how reicht von der Automobilindustrie und Finanzwesen bis hin zu Transport, Versicherung und Marketing.</p>
+      </section>
+
+      <section id="services-de" class="reveal">
+        <h3 class="section-title">Leistungen</h3>
+        <div class="grid-cards">
+          <div class="card" data-idx="1"><h4>Strategie & Prozessanalyse</h4><p>Analyse bestehender Geschäftsprozesse, Identifikation von Optimierungspotenzialen und Entwicklung einer datengetriebenen Strategie, damit Sie bessere Entscheidungen treffen.</p></div>
+
+          <div class="card" data-idx="2"><h4>Data Science & Analytics</h4><p>Datenanalysen, statistische Modellierung, Ad-hoc Analysen & Prognosemodelle, Klassifikation & Vorhersagen.</p></div>
+
+          <div class="card" data-idx="3"><h4>Machine Learning & KI</h4><p>Entwicklung von ML- & Deep-Learning-Modellen sowie Generative AI Lösungen.</p></div>
+
+          <div class="card" data-idx="4"><h4>Business Intelligence & Reporting</h4><p>Dashboards (Power BI, Tableau, Qlik), KPI-Monitoring, automatisiertes Reporting & Visualisierung.</p></div>
+
+          <div class="card" data-idx="5"><h4>Datenmanagement & Engineering</h4><p>Datenintegration & ETL, Data Lakes & Warehouses (PostgreSQL, MongoDB, SAP BW), Datenqualitäts- und Pipeline-Optimierung.</p></div>
+
+          <div class="card" data-idx="6"><h4>Cloud & Deployment</h4><p>Cloud-Lösungen (Azure, AWS, Vercel), MLOps & CI/CD (Docker, Jenkins, Kubernetes), skalierbare Datenarchitekturen.</p></div>
+
+          <div class="card" data-idx="7"><h4>Beratung & Training</h4><p>Datengetriebene Strategie-Beratung, Digitalisierung & Prozessoptimierung, Workshops & Schulungen (Data Science, KI, Generative AI).</p></div>
+
+          <div class="card" data-idx="2"><h4>Homepage & Webentwicklung</h4><p>Entwicklung moderner, responsiver Websites und Web-Applikationen, inkl. Integration von KI-Features und CMS-Lösungen.</p></div>
+        </div>
+      </section>
+
+      <section id="ai-de" class="reveal">
+        <h3 class="section-title">KI-Angebote</h3>
+        <div class="grid-cards">
+          <div class="card" data-idx="1">
+            <h4>Basis-KI-Agenten</h4>
+            <p class="price">Preis: €5.000 – €20.000</p>
+            <p class="monthly">Monatlich (36M): ab ~€140</p>
+            <p>Funktionen: FAQs beantworten, einfache Datenverarbeitung. Beispiel: Regelbasierte Systeme ohne Learning.</p>
+          </div>
+
+          <div class="card" data-idx="2">
+            <h4>KI-Agenten mit NLP</h4>
+            <p class="price">Preis: €25.000 – €45.000</p>
+            <p class="monthly">Monatlich (36M): ab ~€695</p>
+            <p>Funktionen: Verarbeitung natürlicher Sprache, komplexe Interaktionen (z. B. GPT-Modelle).</p>
+          </div>
+
+          <div class="card" data-idx="3">
+            <h4>KI mit Stimme / Video</h4>
+            <p class="price">Preis: €40.000 – €70.000</p>
+            <p class="monthly">Monatlich (36M): ab ~€1.100</p>
+            <p>Funktionen: Voice/Video Antworten, personalisierte Kommunikation (Callcenter, Sales).</p>
+          </div>
+
+          <div class="card" data-idx="4">
+            <h4>KI für Backend-Prozesse</h4>
+            <p class="price">Preis: €50.000 – €90.000</p>
+            <p class="monthly">Monatlich (36M): ab ~€1.400</p>
+            <p>Funktionen: Automatisierung interner Prozesse, Datenanalyse, Integration in CRM/ERP.</p>
+          </div>
+
+          <div class="card" data-idx="5">
+            <h4>Enterprise-KI (ML)</h4>
+            <p class="price">Preis: €100.000 – €250.000+</p>
+            <p class="monthly">Monatlich (36M): ab ~€2.800</p>
+            <p>Funktionen: Selbstlernende Systeme, komplexe Entscheidungsprozesse für große Unternehmen.</p>
+          </div>
+
+          <div class="card" data-idx="6">
+            <h4>Wartung & Betrieb</h4>
+            <p>Jährliche Wartung: typ. 15–20 % der Entwicklungskosten (Support, Updates, Monitoring).</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact-de" class="reveal">
+        <h3 class="section-title">Kontakt</h3>
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start">
+          <div class="form-card">
+            <form action="https://formspree.io/f/xeolryra" method="POST" id="form-de">
+              <div class="row"><input type="text" name="name" placeholder="Ihr Name" required></div>
+              <div class="row"><input type="email" name="email" placeholder="Ihre E-Mail" required></div>
+              <div class="row"><textarea name="message" rows="6" placeholder="Ihre Nachricht" required></textarea></div>
+              <div style="display:flex;gap:12px;align-items:center">
+                <button class="btn btn-primary" type="submit">Senden</button>
+                <div style="color:var(--muted);font-size:0.9rem">oder rufen Sie uns an: <a href="tel:+4917631591931" style="color:var(--accent-2);font-weight:700;text-decoration:none">+49 176 31591931</a></div>
+              </div>
+            </form>
+            <div id="form-de-success" style="display:none;margin-top:12px;background:linear-gradient(90deg,var(--accent-2),var(--accent-1));padding:10px;border-radius:8px;color:#012; font-weight:700">Danke — Ihre Nachricht wurde gesendet.</div>
+          </div>
+
+          <aside style="background:var(--glass);padding:18px;border-radius:12px;">
+            <div style="font-weight:700;margin-bottom:8px">AI & Data Solutions</div>
+            <div style="color:var(--muted)">Obere Waibliner Str. 147a<br>70374 Stuttgart</div>
+            <div style="margin-top:10px;color:var(--muted)">Email: <a href="mailto:estaghvirou.b@gmail.com" style="color:var(--accent-1)">estaghvirou.b@gmail.com</a></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="legal-de" class="reveal">
+        <h3 class="section-title">Impressum & Datenschutz</h3>
+        <div style="display:grid;gap:12px">
+          <div style="background:var(--glass);padding:16px;border-radius:10px">
+            <strong>AI & Data Solutions</strong><br>Obere Waibliner Straße 147a, 70374 Stuttgart<br>Tel: +49 176 31591931<br>Email: estaghvirou.b@gmail.com
+          </div>
+          <div style="background:var(--glass);padding:16px;border-radius:10px">
+            <strong>Datenschutz</strong><br>Wir behandeln Ihre Daten vertraulich und verwenden diese nur zur Bearbeitung Ihrer Anfrage. Formspree übernimmt die Verarbeitung der Formularanfragen.
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
 
-  <section id="ai-de">
-    <h2>KI-Angebote</h2>
-    <p>Wir entwickeln maßgeschneiderte KI-Agenten – von einfachen Automatisierungen bis hin zu komplexen, selbstlernenden Systemen.</p>
-  </section>
+    <!-- ======= ENGLISH CONTENT ======= -->
+    <div id="content-en" class="lang-section" style="display:none">
+      <section id="about-en" class="reveal">
+        <h3 class="section-title">About us</h3>
+        <p><strong>AI & Data Solutions</strong> is a team of experienced Data Analysts, Data Scientists and consultants with over 15 years of experience in data analysis, statistics, machine learning, data engineering and generative AI. We build tailored solutions that help companies work data-driven, optimize processes and gain competitive advantages.</p>
+      </section>
 
-  <section id="contact-de">
-    <h2>Kontakt</h2>
-    <div class="contact-info">
-      <p><strong>Adresse:</strong> Obere Waibliner Str. 147a, 70374 Stuttgart</p>
-      <p><strong>Telefon:</strong> <a href="tel:+4917631591931">+49 176 31591931</a></p>
-      <p><strong>Email:</strong> <a href="mailto:estaghvirou.b@gmail.com">estaghvirou.b@gmail.com</a></p>
+      <section id="services-en" class="reveal">
+        <h3 class="section-title">Services</h3>
+        <div class="grid-cards">
+          <div class="card" data-idx="1"><h4>Strategy & Process Analysis</h4><p>Assessment of current processes, identification of optimization opportunities and strategy development for data-driven decisions.</p></div>
+
+          <div class="card" data-idx="2"><h4>Data Science & Analytics</h4><p>Data analysis, statistical modeling, forecasting and ML.</p></div>
+
+          <div class="card" data-idx="3"><h4>Machine Learning & AI</h4><p>ML & deep learning models and generative AI.</p></div>
+
+          <div class="card" data-idx="4"><h4>Business Intelligence</h4><p>Dashboards (Power BI, Tableau, Qlik), KPI monitoring, automated reporting.</p></div>
+
+          <div class="card" data-idx="5"><h4>Data Management & Engineering</h4><p>Data integration, ETL, data lakes & warehouses, pipeline optimization.</p></div>
+
+          <div class="card" data-idx="6"><h4>Cloud & Deployment</h4><p>Azure, AWS, MLOps, CI/CD, Docker, Kubernetes.</p></div>
+
+          <div class="card" data-idx="7"><h4>Consulting & Training</h4><p>Strategy consulting, digitization and training (Data Science, AI).</p></div>
+
+          <div class="card" data-idx="2"><h4>Web Development</h4><p>Modern websites, web apps and integrations with AI & data solutions.</p></div>
+        </div>
+      </section>
+
+      <section id="ai-en" class="reveal">
+        <h3 class="section-title">AI Solutions</h3>
+        <div class="grid-cards">
+          <div class="card" data-idx="1"><h4>Basic AI Agents</h4><p class="price">Price: €5,000 – €20,000</p><p class="monthly">Monthly (36M): from ~€140</p><p>Functions: FAQs, basic data processing.</p></div>
+
+          <div class="card" data-idx="2"><h4>AI Agents with NLP</h4><p class="price">Price: €25,000 – €45,000</p><p class="monthly">Monthly (36M): from ~€695</p><p>Functions: natural language understanding, complex dialogues.</p></div>
+
+          <div class="card" data-idx="3"><h4>AI with Voice/Video</h4><p class="price">Price: €40,000 – €70,000</p><p class="monthly">Monthly (36M): from ~€1,100</p><p>Functions: voice & video responses.</p></div>
+
+          <div class="card" data-idx="4"><h4>Process Automation</h4><p class="price">Price: €50,000 – €90,000</p><p class="monthly">Monthly (36M): from ~€1,400</p><p>Functions: CRM/ERP integration.</p></div>
+
+          <div class="card" data-idx="5"><h4>Enterprise AI</h4><p class="price">Price: €100,000 – €250,000+</p><p class="monthly">Monthly (36M): from ~€2,800</p><p>Functions: self-learning, complex decision systems.</p></div>
+
+          <div class="card" data-idx="6"><h4>Maintenance</h4><p>Annual maintenance: typically 15–20% of development costs.</p></div>
+        </div>
+      </section>
+
+      <section id="contact-en" class="reveal">
+        <h3 class="section-title">Contact</h3>
+        <div style="display:grid;grid-template-columns:1fr 300px;gap:18px">
+          <div class="form-card">
+            <form action="https://formspree.io/f/xeolryra" method="POST" id="form-en">
+              <div class="row"><input type="text" name="name" placeholder="Your name" required></div>
+              <div class="row"><input type="email" name="email" placeholder="Your email" required></div>
+              <div class="row"><textarea name="message" rows="6" placeholder="Your message" required></textarea></div>
+              <div style="display:flex;gap:12px;align-items:center">
+                <button class="btn btn-primary" type="submit">Send</button>
+                <div style="color:var(--muted);font-size:0.9rem">or call <a href="tel:+4917631591931" style="color:var(--accent-2);font-weight:700;text-decoration:none">+49 176 31591931</a></div>
+              </div>
+            </form>
+            <div id="form-en-success" style="display:none;margin-top:12px;background:linear-gradient(90deg,var(--accent-2),var(--accent-1));padding:10px;border-radius:8px;color:#012; font-weight:700">Thanks — your message was sent.</div>
+          </div>
+          <aside style="background:var(--glass);padding:14px;border-radius:12px">
+            <div style="font-weight:700">AI & Data Solutions</div>
+            <div style="color:var(--muted)">Obere Waibliner Str. 147a<br>70374 Stuttgart</div>
+            <div style="margin-top:10px;color:var(--muted)">Email: <a href="mailto:estaghvirou.b@gmail.com" style="color:var(--accent-1)">estaghvirou.b@gmail.com</a></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="legal-en" class="reveal">
+        <h3 class="section-title">Imprint & Privacy</h3>
+        <div style="display:grid;gap:10px">
+          <div style="background:var(--glass);padding:12px;border-radius:10px">
+            <strong>AI & Data Solutions</strong><br>Obere Waibliner Straße 147a<br>70374 Stuttgart<br>Phone: +49 176 31591931<br>Email: estaghvirou.b@gmail.com
+          </div>
+          <div style="background:var(--glass);padding:12px;border-radius:10px">
+            <strong>Privacy</strong><br>We treat your data confidentially. We only use the data to process your request. Formspree handles form submissions.
+          </div>
+        </div>
+      </section>
     </div>
-    <form action="https://formspree.io/f/xeolryra" method="POST">
-      <label>Name:</label><input type="text" name="name" required>
-      <label>Email:</label><input type="email" name="email" required>
-      <label>Nachricht:</label><textarea name="message" rows="5" required></textarea>
-      <button type="submit">Absenden</button>
-    </form>
-    <div id="successMessage">Danke! Ihre Nachricht wurde gesendet ✅</div>
-  </section>
 
-  <section id="impressum-de">
-    <h2>Impressum</h2>
-    <p><strong>AI & Data Solutions</strong><br>Obere Waibliner Str. 147a<br>70374 Stuttgart<br>Telefon: +49 176 31591931<br>Email: estaghvirou.b@gmail.com</p>
-  </section>
+    <!-- ======= FRANÇAIS ======= -->
+    <div id="content-fr" class="lang-section" style="display:none">
+      <section id="about-fr" class="reveal">
+        <h3 class="section-title">À propos</h3>
+        <p><strong>AI & Data Solutions</strong> est une équipe d'analystes de données, data scientists et consultants expérimentés avec plus de 15 ans d'expérience en analyse de données, statistiques, apprentissage automatique, ingénierie des données et IA générative. Nous développons des solutions sur-mesure pour aider les entreprises à être data-driven et optimiser leurs processus.</p>
+      </section>
 
-  <section id="datenschutz-de">
-    <h2>Datenschutz</h2>
-    <p>Wir nehmen den Schutz Ihrer Daten ernst. Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.</p>
-  </section>
-</div>
+      <section id="services-fr" class="reveal">
+        <h3 class="section-title">Services</h3>
+        <div class="grid-cards">
+          <div class="card" data-idx="1"><h4>Stratégie & Analyse des processus</h4><p>Analyse des processus existants, identification des opportunités et développement d'une stratégie basée sur les données.</p></div>
 
-<!-- ==================== ENGLISH ==================== -->
-<div id="content-en" style="display:none;">
-  <section id="about-en">
-    <h2>About Us</h2>
-    <p><strong class="company">AI & Data Solutions</strong> is a team of experienced data analysts, data scientists and consultants with over 15 years of expertise. We build tailored solutions that help companies become data-driven, optimize processes, and gain a competitive advantage.</p>
-  </section>
+          <div class="card" data-idx="2"><h4>Data Science & Analyse</h4><p>Analyses, modélisation statistique, prévisions et machine learning.</p></div>
 
-  <section id="services-en">
-    <h2>Services</h2>
-    <div class="grid">
-      <div class="ai-card"><h3>Data Science & Analytics</h3><ul><li>Data analysis & forecasting</li><li>Classification & prediction models</li></ul></div>
-      <div class="ai-card"><h3>Machine Learning & AI</h3><ul><li>ML & Deep Learning models</li></ul></div>
-      <div class="ai-card"><h3>Business Intelligence</h3><ul><li>Dashboards (Power BI, Tableau)</li><li>Automated reporting</li></ul></div>
-      <div class="ai-card"><h3>Data Management</h3><ul><li>ETL & integration</li><li>Data lakes & warehouses</li></ul></div>
-      <div class="ai-card"><h3>Cloud & Deployment</h3><ul><li>Azure, AWS, Vercel</li><li>MLOps & CI/CD</li></ul></div>
-      <div class="ai-card"><h3>Consulting & Training</h3><ul><li>Strategy consulting</li><li>Workshops & training</li></ul></div>
-      <div class="ai-card"><h3>Web Development</h3><ul><li>Modern websites</li><li>Responsive design</li></ul></div>
+          <div class="card" data-idx="3"><h4>Machine Learning & IA</h4><p>Modèles ML & deep learning, IA générative.</p></div>
+
+          <div class="card" data-idx="4"><h4>Business Intelligence</h4><p>Tableaux de bord (Power BI, Tableau, Qlik), suivi KPI, reporting automatisé.</p></div>
+
+          <div class="card" data-idx="5"><h4>Gestion des données</h4><p>Intégration, ETL, data lakes & entrepôts, optimisation des pipelines.</p></div>
+
+          <div class="card" data-idx="6"><h4>Cloud & Déploiement</h4><p>Azure, AWS, MLOps, CI/CD, Docker, Kubernetes.</p></div>
+
+          <div class="card" data-idx="7"><h4>Conseil & Formation</h4><p>Conseil stratégique, digitalisation et formations (Data Science, IA).</p></div>
+
+          <div class="card" data-idx="2"><h4>Développement Web</h4><p>Sites web modernes, applications web et intégrations IA.</p></div>
+        </div>
+      </section>
+
+      <section id="ai-fr" class="reveal">
+        <h3 class="section-title">Solutions IA</h3>
+        <div class="grid-cards">
+          <div class="card" data-idx="1"><h4>Agents IA de base</h4><p class="price">Prix: €5.000 – €20.000</p><p class="monthly">Mensuel (36M): dès ~€140</p><p>Fonctions: FAQ, traitement de données simples.</p></div>
+
+          <div class="card" data-idx="2"><h4>Agents IA avec NLP</h4><p class="price">Prix: €25.000 – €45.000</p><p class="monthly">Mensuel (36M): dès ~€695</p><p>Fonctions: compréhension du langage, dialogues complexes.</p></div>
+
+          <div class="card" data-idx="3"><h4>IA avec voix/vidéo</h4><p class="price">Prix: €40.000 – €70.000</p><p class="monthly">Mensuel (36M): dès ~€1.100</p><p>Fonctions: réponses vocales & vidéo.</p></div>
+
+          <div class="card" data-idx="4"><h4>Automatisation des processus</h4><p class="price">Prix: €50.000 – €90.000</p><p class="monthly">Mensuel (36M): dès ~€1.400</p><p>Fonctions: intégration CRM/ERP.</p></div>
+
+          <div class="card" data-idx="5"><h4>IA Entreprise</h4><p class="price">Prix: €100.000 – €250.000+</p><p class="monthly">Mensuel (36M): dès ~€2.800</p><p>Fonctions: auto-apprentissage, systèmes complexes.</p></div>
+
+          <div class="card" data-idx="6"><h4>Maintenance</h4><p>Maintenance annuelle : typ. 15–20 % des coûts de développement.</p></div>
+        </div>
+      </section>
+
+      <section id="contact-fr" class="reveal">
+        <h3 class="section-title">Contact</h3>
+        <div style="display:grid;grid-template-columns:1fr 300px;gap:18px">
+          <div class="form-card">
+            <form action="https://formspree.io/f/xeolryra" method="POST" id="form-fr">
+              <div class="row"><input type="text" name="name" placeholder="Votre nom" required></div>
+              <div class="row"><input type="email" name="email" placeholder="Votre email" required></div>
+              <div class="row"><textarea name="message" rows="6" placeholder="Votre message" required></textarea></div>
+              <div style="display:flex;gap:12px;align-items:center">
+                <button class="btn btn-primary" type="submit">Envoyer</button>
+                <div style="color:var(--muted);font-size:0.9rem">ou appelez <a href="tel:+4917631591931" style="color:var(--accent-2);font-weight:700;text-decoration:none">+49 176 31591931</a></div>
+              </div>
+            </form>
+            <div id="form-fr-success" style="display:none;margin-top:12px;background:linear-gradient(90deg,var(--accent-2),var(--accent-1));padding:10px;border-radius:8px;color:#012; font-weight:700">Merci — votre message a été envoyé.</div>
+          </div>
+
+          <aside style="background:var(--glass);padding:14px;border-radius:12px">
+            <div style="font-weight:700">AI & Data Solutions</div>
+            <div style="color:var(--muted)">Obere Waibliner Str. 147a<br>70374 Stuttgart</div>
+            <div style="margin-top:10px;color:var(--muted)">Email: <a href="mailto:estaghvirou.b@gmail.com" style="color:var(--accent-1)">estaghvirou.b@gmail.com</a></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="legal-fr" class="reveal">
+        <h3 class="section-title">Mentions légales & Confidentialité</h3>
+        <div style="display:grid;gap:10px">
+          <div style="background:var(--glass);padding:12px;border-radius:10px">
+            <strong>AI & Data Solutions</strong><br>Obere Waibliner Straße 147a<br>70374 Stuttgart<br>Tél: +49 176 31591931<br>Email: estaghvirou.b@gmail.com
+          </div>
+          <div style="background:var(--glass);padding:12px;border-radius:10px">
+            <strong>Confidentialité</strong><br>Nous traitons vos données de manière confidentielle et les utilisons uniquement pour traiter votre demande.
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
 
-  <section id="ai-en">
-    <h2>AI Solutions</h2>
-    <p>We build custom AI agents – from simple automations to complex self-learning systems.</p>
-  </section>
+  </main>
 
-  <section id="contact-en">
-    <h2>Contact</h2>
-    <div class="contact-info">
-      <p><strong>Address:</strong> Obere Waibliner Str. 147a, 70374 Stuttgart</p>
-      <p><strong>Phone:</strong> <a href="tel:+4917631591931">+49 176 31591931</a></p>
-      <p><strong>Email:</strong> <a href="mailto:estaghvirou.b@gmail.com">estaghvirou.b@gmail.com</a></p>
+  <footer class="site-footer">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+        <div style="font-weight:700">AI & Data Solutions</div>
+        <div style="color:var(--muted)">© 2025 · Obere Waibliner Str. 147a, 70374 Stuttgart</div>
+      </div>
     </div>
-    <form action="https://formspree.io/f/xeolryra" method="POST">
-      <label>Name:</label><input type="text" name="name" required>
-      <label>Email:</label><input type="email" name="email" required>
-      <label>Message:</label><textarea name="message" rows="5" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-    <div id="successMessage">Thank you! Your message has been sent ✅</div>
-  </section>
+  </footer>
 
-  <section id="impressum-en">
-    <h2>Imprint</h2>
-    <p><strong>AI & Data Solutions</strong><br>Obere Waibliner Str. 147a<br>70374 Stuttgart<br>Phone: +49 176 31591931<br>Email: estaghvirou.b@gmail.com</p>
-  </section>
+  <script>
+    // language switch
+    function showLang(lang){
+      document.querySelectorAll('.lang-section').forEach(s=>s.style.display='none');
+      document.getElementById('content-'+lang)?.style.display='block'; // fallback for id style differences
+      // For our structure we have ids 'content-de', 'content-en', 'content-fr'
+      if(lang==='de'){document.getElementById('content-de').style.display='block'; document.getElementById('content-en').style.display='none'; document.getElementById('content-fr').style.display='none';}
+      if(lang==='en'){document.getElementById('content-de').style.display='none'; document.getElementById('content-en').style.display='block'; document.getElementById('content-fr').style.display='none';}
+      if(lang==='fr'){document.getElementById('content-de').style.display='none'; document.getElementById('content-en').style.display='none'; document.getElementById('content-fr').style.display='block';}
+      document.querySelectorAll('.lang-tabs button').forEach(b=>b.classList.remove('active'));
+      document.getElementById('btn-'+lang).classList.add('active');
+      document.querySelectorAll('.lang-switch button').forEach(btn=>{
+        if(btn.id==='btn-'+lang) btn.classList.add('active'); else btn.classList.remove('active');
+      });
+    }
 
-  <section id="datenschutz-en">
-    <h2>Privacy</h2>
-    <p>We take your privacy seriously. Your data will only be used to process your request and will not be shared with third parties.</p>
-  </section>
-</div>
+    // initial (DE shown)
+    document.getElementById('btn-de').addEventListener('click', ()=> showLang('de'));
+    document.getElementById('btn-en').addEventListener('click', ()=> showLang('en'));
+    document.getElementById('btn-fr').addEventListener('click', ()=> showLang('fr'));
 
-<!-- ==================== FRANÇAIS ==================== -->
-<div id="content-fr" style="display:none;">
-  <section id="about-fr">
-    <h2>À propos</h2>
-    <p><strong class="company">AI & Data Solutions</strong> est une équipe d’analystes de données, de data scientists et de consultants expérimentés avec plus de 15 ans d’expérience. Nous développons des solutions sur mesure qui aident les entreprises à devenir orientées données, à optimiser les processus et à obtenir un avantage concurrentiel.</p>
-  </section>
+    // theme toggle + persist
+    const themeToggle = document.getElementById('themeToggle');
+    const setTheme = (mode) => {
+      if(mode==='light') document.body.classList.add('light'); else document.body.classList.remove('light');
+      try{ localStorage.setItem('site-theme', mode);}catch(e){}
+    }
+    themeToggle.addEventListener('click',()=>{
+      const isLight = document.body.classList.toggle('light');
+      setTheme(isLight ? 'light' : 'dark');
+    });
+    (function(){ try{ const saved = localStorage.getItem('site-theme'); if(saved) setTheme(saved); }catch(e){} })();
 
-  <section id="services-fr">
-    <h2>Services</h2>
-    <div class="grid">
-      <div class="ai-card"><h3>Data Science & Analyse</h3><ul><li>Analyses & prévisions</li><li>Modèles de classification</li></ul></div>
-      <div class="ai-card"><h3>Machine Learning & IA</h3><ul><li>Modèles ML & Deep Learning</li></ul></div>
-      <div class="ai-card"><h3>Business Intelligence</h3><ul><li>Tableaux de bord (Power BI, Tableau)</li><li>Rapports automatisés</li></ul></div>
-      <div class="ai-card"><h3>Gestion des données</h3><ul><li>ETL & intégration</li><li>Lacs & entrepôts de données</li></ul></div>
-      <div class="ai-card"><h3>Cloud & Déploiement</h3><ul><li>Azure, AWS, Vercel</li><li>MLOps & CI/CD</li></ul></div>
-      <div class="ai-card"><h3>Conseil & Formation</h3><ul><li>Conseil en stratégie</li><li>Ateliers & formations</li></ul></div>
-      <div class="ai-card"><h3>Développement Web</h3><ul><li>Sites modernes</li><li>Design responsive</li></ul></div>
-    </div>
-  </section>
+    // reveal on scroll
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    revealEls.forEach(el=>obs.observe(el));
 
-  <section id="ai-fr">
-    <h2>Solutions IA</h2>
-    <p>Nous développons des agents IA personnalisés – allant des automatisations simples aux systèmes auto-apprenants complexes.</p>
-  </section>
+    // form submit handling: post to formspree, show success message
+    function wireForm(id, successId){
+      const f = document.getElementById(id);
+      if(!f) return;
+      f.addEventListener('submit', function(e){
+        e.preventDefault();
+        const data = new FormData(f);
+        fetch(f.action, {method:'POST', body: data, headers: {'Accept':'application/json'}})
+          .then(resp=>{
+            if(resp.ok){
+              f.reset();
+              document.getElementById(successId).style.display='block';
+              setTimeout(()=>document.getElementById(successId).style.display='none',4000);
+            } else {
+              resp.json().then(j=>alert(j?.error || 'Fehler beim Senden'));
+            }
+          }).catch(()=>alert('Fehler beim Senden. Bitte versuchen Sie es später.'));
+      });
+    }
+    wireForm('form-de','form-de-success');
+    wireForm('form-en','form-en-success');
+    wireForm('form-fr','form-fr-success');
 
-  <section id="contact-fr">
-    <h2>Contact</h2>
-    <div class="contact-info">
-      <p><strong>Adresse:</strong> Obere Waibliner Str. 147, 70374 Stuttgart</p>
-      <p><strong>Téléphone:</strong> <a href="tel:+4917631591931">+49 176 31591931</a></p>
-      <p><strong>Email:</strong> <a href="mailto:estaghvirou.b@gmail.com">estaghvirou.b@gmail.com</a></p>
-    </div>
-    <form action="https://formspree.io/f/xeolryra" method="POST">
-      <label>Nom:</label><input type="text" name="name" required>
-      <label>Email:</label><input type="email" name="email" required>
-      <label>Message:</label><textarea name="message" rows="5" required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
-    <div id="successMessage">Merci ! Votre message a été envoyé ✅</div>
-  </section>
-
-  <section id="impressum-fr">
-    <h2>Mentions légales</h2>
-    <p><strong>AI & Data Solutions</strong><br>Obere Waibliner Str. 147a<br>70374 Stuttgart<br>Téléphone: +49 176 31591931<br>Email: estaghvirou.b@gmail.com</p>
-  </section>
-
-  <section id="datenschutz-fr">
-    <h2>Confidentialité</h2>
-    <p>Nous prenons la protection de vos données au sérieux. Vos informations ne seront utilisées que pour traiter votre demande et ne seront pas partagées avec des tiers.</p>
-  </section>
-</div>
-
-<script>
-const themeToggle=document.getElementById("themeToggle");
-themeToggle.addEventListener("click",()=>{document.body.classList.toggle("dark")});
-const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible")}})}, {threshold:0.2});
-document.querySelectorAll(".ai-card").forEach(card=>observer.observe(card));
-document.getElementById("hamburger").addEventListener("click",()=>{document.getElementById("nav-links").classList.toggle("show")});
-function showLang(lang){document.getElementById("content-de").style.display=lang==="de"?"block":"none";document.getElementById("content-en").style.display=lang==="en"?"block":"none";document.getElementById("content-fr").style.display=lang==="fr"?"block":"none";}
-document.getElementById("btn-de").onclick=()=>showLang("de");
-document.getElementById("btn-en").onclick=()=>showLang("en");
-document.getElementById("btn-fr").onclick=()=>showLang("fr");
-</script>
+    // nav hamburger for small screens (simple)
+    const nav = document.querySelector('.nav');
+    const hamburger = document.querySelector('#hamburger');
+    if(hamburger){
+      hamburger.addEventListener('click', ()=> nav.classList.toggle('open'));
+    }
+  </script>
 </body>
 </html>
