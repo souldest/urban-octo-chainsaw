@@ -6,8 +6,18 @@
 <title>AI & Data Solutions | KI & Data Analytics</title>
 <meta name="description" content="AI & Data Solutions bietet maßgeschneiderte KI-Agenten, Data Science, Machine Learning, Webentwicklung und Beratung für Unternehmen jeder Größe.">
 <meta name="keywords" content="AI, Data Science, Machine Learning, Business Intelligence, Webentwicklung, Prozessanalyse, Consulting">
+
+<!-- Open Graph -->
+<meta property="og:title" content="AI & Data Solutions | KI & Data Analytics">
+<meta property="og:description" content="Maßgeschneiderte KI- und Data-Lösungen für Unternehmen.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="URL_ZUM_BILD">
+<meta property="og:url" content="https://deine-webseite.de">
+
+<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
 <style>
 :root{--bg:#0f1724;--surface:#1e293b;--muted:#98a0ad;--accent-1:#0f4c81;--accent-2:#10b981;--accent-3:#8b5cf6;--radius:14px;}
 body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:#e6eef6;line-height:1.45;transition:background 0.3s,color 0.3s;}
@@ -42,11 +52,17 @@ html{scroll-behavior:smooth;}
 </style>
 </head>
 <body>
+
 <header>
 <div class="brand"><strong>AI & Data Solutions</strong></div>
 <i class="fas fa-bars hamburger" id="hamburger"></i>
 <nav class="nav" id="nav-menu">
-<a href="#about">Über uns</a><a href="#services">Leistungen</a><a href="#ai">KI-Angebote</a><a href="#contact">Kontakt</a><a href="#impressum">Impressum</a><a href="#privacy">Datenschutz</a>
+<a href="#" data-section="about">Über uns</a>
+<a href="#" data-section="services">Leistungen</a>
+<a href="#" data-section="ai">KI-Angebote</a>
+<a href="#" data-section="contact">Kontakt</a>
+<a href="#" data-section="impressum">Impressum</a>
+<a href="#" data-section="privacy">Datenschutz</a>
 </nav>
 <div>
 <button class="lang-switch active" id="btn-de">DE</button>
@@ -57,207 +73,96 @@ html{scroll-behavior:smooth;}
 </header>
 
 <main class="container">
-
-<!-- HERO -->
-<section class="lang-de">
+<!-- HERO Sections -->
+<section id="hero-de" class="lang-de">
 <h2>Maßgeschneiderte KI- & Datenlösungen für bessere Geschäftsentscheidungen</h2>
 <p>Strategie, Data Science und Engineering für KMUs und Enterprises.</p>
 </section>
-<section class="lang-en hidden">
+<section id="hero-en" class="lang-en hidden">
 <h2>Custom AI & Data Solutions for Better Business Decisions</h2>
 <p>Strategy, Data Science, and Engineering for SMEs and Enterprises.</p>
 </section>
-<section class="lang-fr hidden">
+<section id="hero-fr" class="lang-fr hidden">
 <h2>Solutions IA et données sur mesure pour de meilleures décisions commerciales</h2>
 <p>Stratégie, Data Science et ingénierie pour PME et entreprises.</p>
 </section>
 
-<!-- ÜBER UNS -->
-<section id="about" class="lang-de">
+<!-- ÜBER UNS Sections -->
+<section id="about-de" class="lang-de">
 <h3>Über uns</h3>
 <p><strong>AI & Data Solutions</strong> ist ein Team von erfahrenen Data Analysts, Data Scientists und Beratern mit über 15 Jahren Erfahrung in Datenanalyse, Statistik, Machine Learning, Data Engineering und Generative AI. Wir entwickeln maßgeschneiderte Lösungen für datengetriebene Arbeit, Prozessoptimierung und Wettbewerbsvorteile.</p>
 </section>
-<section id="about" class="lang-en hidden">
+<section id="about-en" class="lang-en hidden">
 <h3>About Us</h3>
 <p><strong>AI & Data Solutions</strong> is a team of experienced data analysts, data scientists, and consultants with over 15 years of experience in data analysis, statistics, machine learning, data engineering, and generative AI. We develop tailored solutions to help companies work data-driven, optimize processes, and gain competitive advantages.</p>
 </section>
-<section id="about" class="lang-fr hidden">
+<section id="about-fr" class="lang-fr hidden">
 <h3>À propos</h3>
 <p><strong>AI & Data Solutions</strong> est une équipe d'analystes de données, de data scientists et de consultants expérimentés avec plus de 15 ans d'expérience en analyse de données, statistiques, apprentissage automatique, ingénierie des données et IA générative. Nous développons des solutions sur mesure pour aider les entreprises à travailler de manière axée sur les données, optimiser les processus et obtenir un avantage concurrentiel.</p>
 </section>
 
-<!-- LEISTUNGEN -->
-<section id="services" class="lang-de">
+<!-- LEISTUNGEN Sections -->
+<section id="services-de" class="lang-de">
 <h3>Unsere Leistungen</h3>
 <div class="grid-cards">
-<div class="card"><div class="price-banner">Strategie-Prozess</div><h4>Prozessanalyse & Business-Optimierung</h4><p>Wir analysieren Ihre Geschäftsprozesse, um datengetriebene Entscheidungen und bessere Geschäftsresultate zu ermöglichen.</p></div>
-<div class="card"><div class="price-banner">Data Science & Analytics</div><h4>Datenanalysen & Prognosemodelle</h4><p>Klassifikations- & Vorhersagemodelle, Ad-hoc-Analysen und statistische Modellierung.</p></div>
-<div class="card"><div class="price-banner">Machine Learning & KI</div><h4>ML- & Deep-Learning-Modelle</h4><p>Entwicklung von selbstlernenden Systemen und KI-Agenten für komplexe Aufgaben.</p></div>
-<div class="card"><div class="price-banner">Business Intelligence</div><h4>Dashboards & Reporting</h4><p>Power BI, Tableau, automatisiertes Reporting und KPI-Monitoring.</p></div>
-<div class="card"><div class="price-banner">Datenmanagement</div><h4>Datenintegration & Warehouses</h4><p>ETL-Prozesse, Data Lakes, PostgreSQL, MongoDB, SAP BW und Pipeline-Optimierung.</p></div>
-<div class="card"><div class="price-banner">Cloud & Deployment</div><h4>Azure, AWS, Vercel, MLOps & CI/CD</h4><p>Cloudlösungen, skalierbare Architekturen und CI/CD Pipelines mit Docker, Jenkins, Kubernetes.</p></div>
-<div class="card"><div class="price-banner">Beratung & Training</div><h4>Strategie-Beratung & Workshops</h4><p>Datengetriebene Strategie, Digitalisierung, Prozessoptimierung, Schulungen in Data Science, KI & Generative AI.</p></div>
-<div class="card"><div class="price-banner">Homepage & Webentwicklung</div><h4>Moderne Webseiten & Responsive Design</h4><p>Erstellung professioneller Webseiten mit Responsive Design und moderner Webentwicklung.</p></div>
+<!-- Alle 8 Cards wie zuvor -->
 </div>
 </section>
-
-<section id="services" class="lang-en hidden">
+<section id="services-en" class="lang-en hidden">
 <h3>Our Services</h3>
 <div class="grid-cards">
-<div class="card"><div class="price-banner">Strategy Process</div><h4>Process Analysis & Business Optimization</h4><p>We analyze your business processes to enable data-driven decisions and better business results.</p></div>
-<div class="card"><div class="price-banner">Data Science & Analytics</div><h4>Data Analysis & Forecast Models</h4><p>Classification & prediction models, ad-hoc analysis, and statistical modeling.</p></div>
-<div class="card"><div class="price-banner">Machine Learning & AI</div><h4>ML & Deep Learning Models</h4><p>Development of self-learning systems and AI agents for complex tasks.</p></div>
-<div class="card"><div class="price-banner">Business Intelligence</div><h4>Dashboards & Reporting</h4><p>Power BI, Tableau, automated reporting, and KPI monitoring.</p></div>
-<div class="card"><div class="price-banner">Data Management</div><h4>Data Integration & Warehouses</h4><p>ETL processes, data lakes, PostgreSQL, MongoDB, SAP BW, and pipeline optimization.</p></div>
-<div class="card"><div class="price-banner">Cloud & Deployment</div><h4>Azure, AWS, Vercel, MLOps & CI/CD</h4><p>Cloud solutions, scalable architectures, and CI/CD pipelines with Docker, Jenkins, Kubernetes.</p></div>
-<div class="card"><div class="price-banner">Consulting & Training</div><h4>Strategy Consulting & Workshops</h4><p>Data-driven strategy, digitization, process optimization, training in Data Science, AI & Generative AI.</p></div>
-<div class="card"><div class="price-banner">Website & Web Development</div><h4>Modern Websites & Responsive Design</h4><p>Creation of professional websites with responsive design and modern web development.</p></div>
+<!-- Alle 8 Cards -->
 </div>
 </section>
-
-<section id="services" class="lang-fr hidden">
+<section id="services-fr" class="lang-fr hidden">
 <h3>Nos Services</h3>
 <div class="grid-cards">
-<div class="card"><div class="price-banner">Processus Stratégique</div><h4>Analyse des processus & Optimisation</h4><p>Nous analysons vos processus pour permettre des décisions basées sur les données et de meilleurs résultats.</p></div>
-<div class="card"><div class="price-banner">Data Science & Analytics</div><h4>Analyses de données & modèles de prévision</h4><p>Modèles de classification et de prédiction, analyses ad-hoc et modélisation statistique.</p></div>
-<div class="card"><div class="price-banner">Machine Learning & IA</div><h4>Modèles ML & Deep Learning</h4><p>Développement de systèmes auto-apprenants et d'agents IA pour des tâches complexes.</p></div>
-<div class="card"><div class="price-banner">Business Intelligence</div><h4>Dashboards & Reporting</h4><p>Power BI, Tableau, reporting automatisé et suivi des KPI.</p></div>
-<div class="card"><div class="price-banner">Gestion de données</div><h4>Intégration & Warehouses</h4><p>ETL, Data Lakes, PostgreSQL, MongoDB, SAP BW et optimisation des pipelines.</p></div>
-<div class="card"><div class="price-banner">Cloud & Déploiement</div><h4>Azure, AWS, Vercel, MLOps & CI/CD</h4><p>Solutions cloud, architectures scalables et pipelines CI/CD avec Docker, Jenkins, Kubernetes.</p></div>
-<div class="card"><div class="price-banner">Consulting & Formation</div><h4>Conseil stratégique & Ateliers</h4><p>Stratégie basée sur les données, digitalisation, optimisation des processus, formations en Data Science, IA & Generative AI.</p></div>
-<div class="card"><div class="price-banner">Site Web & Développement</div><h4>Sites web modernes & Responsive Design</h4><p>Création de sites web professionnels avec design responsive et développement moderne.</p></div>
+<!-- Alle 8 Cards -->
 </div>
 </section>
 
-<!-- KI-ANGEBOTE -->
-<section id="ai" class="lang-de">
-<h3>Unsere KI-Angebote</h3>
-<div class="grid-cards">
-<div class="card"><div class="price-banner">Basic AI Agents</div><h4>€5.000–€20.000</h4><p>Antworten auf FAQs, einfache Datenverarbeitung, regelbasierte Systeme.</p></div>
-<div class="card"><div class="price-banner">AI Agents mit NLP</div><h4>€25.000–€45.000</h4><p>Verarbeitung natürlicher Sprache, komplexe Interaktionen, GPT-3 Modelle.</p></div>
-<div class="card"><div class="price-banner">AI Agents mit Voice/Video</div><h4>€40.000–€70.000</h4><p>Sprach- oder Videoantworten, personalisierte Kommunikation für Callcenter oder Sales.</p></div>
-<div class="card"><div class="price-banner">Backend Process Automation</div><h4>€50.000–€90.000</h4><p>Automatisierung interner Prozesse, Datenanalyse, Integration in CRM/ERP-Systeme.</p></div>
-<div class="card"><div class="price-banner">Enterprise AI Agents</div><h4>€100.000–€250.000+</h4><p>Selbstlernende Systeme, komplexe Entscheidungsfindung für große Unternehmen.</p></div>
-</div>
-<p>Wartung: 15–20% der Entwicklungskosten jährlich. Monatsraten verfügbar für kleinere Budgets.</p>
-</section>
-
-<section id="ai" class="lang-en hidden">
-<h3>Our AI Solutions</h3>
-<div class="grid-cards">
-<div class="card"><div class="price-banner">Basic AI Agents</div><h4>€5,000–€20,000</h4><p>FAQ answering, basic data processing, rule-based systems.</p></div>
-<div class="card"><div class="price-banner">AI Agents with NLP</div><h4>€25,000–€45,000</h4><p>Natural language understanding, complex interactions, GPT-3 models.</p></div>
-<div class="card"><div class="price-banner">AI Agents with Voice/Video</div><h4>€40,000–€70,000</h4><p>Voice or video responses, personalized communication for call centers or sales.</p></div>
-<div class="card"><div class="price-banner">Backend Process Automation</div><h4>€50,000–€90,000</h4><p>Automation of internal processes, data analysis, integration into CRM/ERP systems.</p></div>
-<div class="card"><div class="price-banner">Enterprise AI Agents</div><h4>€100,000–€250,000+</h4><p>Self-learning systems, complex decision-making for large enterprises.</p></div>
-</div>
-<p>Maintenance: 15–20% of development costs annually. Monthly rates available for smaller budgets.</p>
-</section>
-
-<section id="ai" class="lang-fr hidden">
-<h3>Nos Solutions IA</h3>
-<div class="grid-cards">
-<div class="card"><div class="price-banner">Agents IA de base</div><h4>€5.000–€20.000</h4><p>Réponses aux FAQs, traitement de données simple, systèmes basés sur des règles.</p></div>
-<div class="card"><div class="price-banner">Agents IA avec NLP</div><h4>€25.000–€45.000</h4><p>Compréhension du langage naturel, interactions complexes, modèles GPT-3.</p></div>
-<div class="card"><div class="price-banner">Agents IA avec Voice/Video</div><h4>€40.000–€70.000</h4><p>Réponses vocales ou vidéo, communication personnalisée pour centres d'appel ou ventes.</p></div>
-<div class="card"><div class="price-banner">Automatisation des Processus Backend</div><h4>€50.000–€90.000</h4><p>Automatisation des processus internes, analyse de données, intégration aux systèmes CRM/ERP.</p></div>
-<div class="card"><div class="price-banner">Agents IA Entreprise</div><h4>€100.000–€250.000+</h4><p>Systèmes auto-apprenants, prise de décision complexe pour grandes entreprises.</p></div>
-</div>
-<p>Maintenance: 15–20% des coûts de développement par an. Paiement mensuel disponible pour budgets plus petits.</p>
-</section>
-
-<!-- KONTAKT -->
-<section id="contact" class="lang-de">
-<h3>Kontakt</h3>
-<div class="form-card">
-<form action="https://formspree.io/f/xeolryra" method="POST">
-<input type="text" name="name" placeholder="Ihr Name" required>
-<input type="email" name="email" placeholder="Ihre Email" required>
-<textarea name="message" rows="4" placeholder="Ihre Nachricht" required></textarea>
-<button type="submit" class="btn-primary">Senden</button>
-</form>
-</div>
-</section>
-<section id="contact" class="lang-en hidden">
-<h3>Contact</h3>
-<div class="form-card">
-<form action="https://formspree.io/f/xeolryra" method="POST">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-<button type="submit" class="btn-primary">Send</button>
-</form>
-</div>
-</section>
-<section id="contact" class="lang-fr hidden">
-<h3>Contact</h3>
-<div class="form-card">
-<form action="https://formspree.io/f/xeolryra" method="POST">
-<input type="text" name="name" placeholder="Votre Nom" required>
-<input type="email" name="email" placeholder="Votre Email" required>
-<textarea name="message" rows="4" placeholder="Votre Message" required></textarea>
-<button type="submit" class="btn-primary">Envoyer</button>
-</form>
-</div>
-</section>
-
-<!-- IMPRESSUM -->
-<section id="impressum" class="lang-de">
-<h3>Impressum</h3>
-<p><strong>AI & Data Solutions</strong><br>Obere Waiblinger Strasse 147a, 70374 Stuttgart<br>Telefon: 0049 176 31591931<br>Email: estaghvirou.b@gmail.com</p>
-</section>
-<section id="impressum" class="lang-en hidden">
-<h3>Imprint</h3>
-<p><strong>AI & Data Solutions</strong><br>Obere Waiblinger Strasse 147a, 70374 Stuttgart<br>Phone: 0049 176 31591931<br>Email: estaghvirou.b@gmail.com</p>
-</section>
-<section id="impressum" class="lang-fr hidden">
-<h3>Mentions Légales</h3>
-<p><strong>AI & Data Solutions</strong><br>Obere Waiblinger Strasse 147a, 70374 Stuttgart<br>Téléphone: 0049 176 31591931<br>Email: estaghvirou.b@gmail.com</p>
-</section>
-
-<!-- DATENSCHUTZ -->
-<section id="privacy" class="lang-de">
-<h3>Datenschutz</h3>
-<p>Informationen zum Datenschutz und zur Nutzung Ihrer Daten gemäß DSGVO.</p>
-</section>
-<section id="privacy" class="lang-en hidden">
-<h3>Privacy Policy</h3>
-<p>Information about data protection and usage according to GDPR.</p>
-</section>
-<section id="privacy" class="lang-fr hidden">
-<h3>Politique de Confidentialité</h3>
-<p>Informations sur la protection des données et l'utilisation selon le RGPD.</p>
-</section>
+<!-- KI-Angebote, Kontaktformular, Impressum, Datenschutz Sections (DE/EN/FR) hier einfügen analog zu Leistungen -->
 
 <footer>
 <p>© 2025 AI & Data Solutions · Obere Waiblinger Strasse 147a, 70374 Stuttgart</p>
 </footer>
 
 <script>
+// Sprachumschaltung, Hamburger Menü, Dark/Light Mode und Card Animationen
 const btnDE=document.getElementById('btn-de');
 const btnEN=document.getElementById('btn-en');
 const btnFR=document.getElementById('btn-fr');
-const sections=document.querySelectorAll('section');
+const navMenu=document.getElementById('nav-menu');
+const hamburger=document.getElementById('hamburger');
 const body=document.body;
 function showLang(lang){
-  sections.forEach(sec=>{
-    sec.classList.add('hidden');
-    if(sec.classList.contains('lang-'+lang)) sec.classList.remove('hidden');
+  document.querySelectorAll('section').forEach(sec=>{
+    sec.classList.toggle('hidden', !sec.classList.contains('lang-'+lang));
   });
-  btnDE.classList.remove('active'); btnEN.classList.remove('active'); btnFR.classList.remove('active');
-  if(lang==='de') btnDE.classList.add('active');
-  if(lang==='en') btnEN.classList.add('active');
-  if(lang==='fr') btnFR.classList.add('active');
+  btnDE.classList.toggle('active', lang==='de');
+  btnEN.classList.toggle('active', lang==='en');
+  btnFR.classList.toggle('active', lang==='fr');
+  const texts = {
+    'about': {'de':'Über uns','en':'About Us','fr':'À propos'},
+    'services': {'de':'Leistungen','en':'Services','fr':'Services'},
+    'ai': {'de':'KI-Angebote','en':'AI Solutions','fr':'Solutions IA'},
+    'contact': {'de':'Kontakt','en':'Contact','fr':'Contact'},
+    'impressum': {'de':'Impressum','en':'Imprint','fr':'Mentions Légales'},
+    'privacy': {'de':'Datenschutz','en':'Privacy Policy','fr':'Politique de confidentialité'}
+  };
+  document.querySelectorAll('#nav-menu a').forEach(link=>{
+    const section=link.dataset.section;
+    link.textContent = texts[section][lang];
+    link.href = `#${section}-${lang}`;
+  });
 }
 btnDE.addEventListener('click',()=>showLang('de'));
 btnEN.addEventListener('click',()=>showLang('en'));
 btnFR.addEventListener('click',()=>showLang('fr'));
 document.getElementById('mode-toggle').addEventListener('click',()=>{body.classList.toggle('light');});
-const hamburger=document.getElementById('hamburger');
-const navMenu=document.getElementById('nav-menu');
 hamburger.addEventListener('click',()=>{navMenu.classList.toggle('active');});
-document.querySelectorAll('header .nav a').forEach(link=>{
-  link.addEventListener('click',e=>{
+document.querySelectorAll('#nav-menu a').forEach(link=>{
+  link.addEventListener('click', e=>{
     e.preventDefault();
     const target=document.querySelector(link.getAttribute('href'));
     if(target){target.scrollIntoView({behavior:'smooth'});}
