@@ -90,175 +90,173 @@ header { position:fixed; top:0; width:100%; background:var(--bg-color); z-index:
 <header>
   <nav id="nav-container">
     <div id="nav-links">
-      <a href="#about-us">Über uns / About Us</a>
-      <a href="#services">Leistungen / Services</a>
-      <a href="#ai-solutions">KI-Angebote / AI Solutions</a>
-      <a href="#contact">Kontakt / Contact</a>
-      <a href="#impressum">Impressum / Imprint</a>
-      <a href="#datenschutz">Datenschutz / Privacy</a>
+      <a href="#about-us-de">Über uns / About Us</a>
+      <a href="#services-de">Leistungen / Services</a>
+      <a href="#ai-solutions-de">KI-Angebote / AI Solutions</a>
+      <a href="#contact-de">Kontakt / Contact</a>
+      <a href="#impressum-de">Impressum / Imprint</a>
+      <a href="#datenschutz-de">Datenschutz / Privacy</a>
     </div>
     <button id="hamburger">☰</button>
   </nav>
 </header>
 
-<!-- Über uns / About Us -->
-<section id="about-us" style="margin-top:80px;">
-<h2>Über uns / About Us</h2>
-<p style="text-align:center; font-size:1.1rem; max-width:900px; margin:0 auto 50px;">
-<strong class="company">AI & Data Solutions</strong> ist ein Team von erfahrenen Data Analysts, Data Scientists und Beratern mit über 15 Jahren Erfahrung in Datenanalyse, Statistik, Machine Learning, Data Engineering und Generative AI.<br>
-<strong class="company">AI & Data Solutions</strong> is a team of experienced Data Analysts, Data Scientists, and consultants with over 15 years of experience in data analysis, statistics, machine learning, data engineering, and generative AI.<br><br>
-Wir entwickeln maßgeschneiderte Lösungen, die Unternehmen helfen, datengetrieben zu arbeiten, Prozesse zu optimieren und Wettbewerbsvorteile zu erzielen.<br>
-We develop custom solutions that help companies work data-driven, optimize processes, and achieve competitive advantages.<br><br>
-Unser Know-how reicht von Automobilindustrie und Finanzwesen bis hin zu Transport, Versicherung und Marketing.<br>
-Our expertise ranges from the automotive industry and finance to transport, insurance, and marketing.<br><br>
-<strong class="company">AI & Data Solutions</strong> bietet maßgeschneiderte KI-Agenten für Unternehmen jeder Größe – von einfachen Automatisierungen bis hin zu komplexen, selbstlernenden Systemen.<br>
-<strong class="company">AI & Data Solutions</strong> offers custom AI agents for companies of all sizes – from simple automations to complex self-learning systems.
-</p>
-</section>
-
-<!-- Leistungen / Services -->
-<section id="services">
-<h2>Leistungen / Services</h2>
-<div class="grid">
-<div class="ai-card">
-<h3>Data Science & Analytics</h3>
-<ul>
-<li>Datenanalysen & statistische Modellierung</li>
-<li>Ad-hoc-Analysen & Prognosemodelle</li>
-<li>Klassifikations- & Vorhersagemodelle</li>
-</ul>
+<!-- Language Toggle Buttons -->
+<div style="text-align:center; margin-top:100px;">
+  <button id="btn-de" style="margin:5px; padding:10px 20px;">Deutsch</button>
+  <button id="btn-en" style="margin:5px; padding:10px 20px;">English</button>
 </div>
-<div class="ai-card">
-<h3>Machine Learning & KI</h3>
-<ul>
-<li>ML- & Deep-Learning-Modelle</li>
-</ul>
-</div>
-<div class="ai-card">
-<h3>Business Intelligence & Reporting</h3>
-<ul>
-<li>Dashboards (Power BI, Tableau, Qlik)</li>
-<li>KPI-Monitoring & Management-Reports</li>
-<li>Automatisiertes Reporting & Visualisierung</li>
-</ul>
-</div>
-<div class="ai-card">
-<h3>Datenmanagement & Engineering</h3>
-<ul>
-<li>Datenintegration & ETL-Prozesse</li>
-<li>Data Lakes & Warehouses (PostgreSQL, MongoDB, SAP BW)</li>
-<li>Optimierung von Datenqualität & Pipelines</li>
-</ul>
-</div>
-<div class="ai-card">
-<h3>Cloud & Deployment</h3>
-<ul>
-<li>Cloud-Lösungen (Azure, AWS, Vercel)</li>
-<li>MLOps & CI/CD (Docker, Jenkins, Kubernetes)</li>
-<li>Skalierbare Datenarchitekturen</li>
-</ul>
-</div>
-<div class="ai-card">
-<h3>Beratung & Training</h3>
-<ul>
-<li>Datengetriebene Strategie-Beratung</li>
-<li>Digitalisierung & Prozessoptimierung</li>
-<li>Workshops & Schulungen (Data Science, KI, Generative AI)</li>
-</ul>
-</div>
-</div>
-</section>
 
-<!-- KI-Angebote / AI Solutions -->
-<section id="ai-solutions">
-<h2>KI-Angebote / AI Solutions</h2>
-<div class="grid">
-  <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">🤖</div>
-    <h3>Basic AI Agents</h3>
-    <p>Preis: €5,000–€20,000</p>
-    <p>Funktionen: FAQs beantworten, einfache Datenverarbeitung</p>
-    <p>Beispiel: Regelbasierte Systeme ohne Lernen</p>
-    <p>Vorteil: Kostengünstig und schnell implementierbar</p>
-  </div>
+<!-- German Content -->
+<div id="content-de">
+  <!-- Über uns -->
+  <section id="about-us-de">
+    <h2>Über uns</h2>
+    <p><strong class="company">AI & Data Solutions</strong> ist ein Team von erfahrenen Data Analysts, Data Scientists und Beratern mit über 15 Jahren Erfahrung in Datenanalyse, Statistik, Machine Learning, Data Engineering und Generative AI...</p>
+  </section>
+  <!-- Leistungen -->
+  <section id="services-de">
+    <h2>Leistungen</h2>
+    <div class="grid">
+      <div class="ai-card"><h3>Data Science & Analytics</h3><ul><li>Datenanalysen & statistische Modellierung</li><li>Ad-hoc-Analysen & Prognosemodelle</li><li>Klassifikations- & Vorhersagemodelle</li></ul></div>
+      <div class="ai-card"><h3>Machine Learning & KI</h3><ul><li>ML- & Deep-Learning-Modelle</li></ul></div>
+      <div class="ai-card"><h3>Business Intelligence & Reporting</h3><ul><li>Dashboards (Power BI, Tableau, Qlik)</li><li>KPI-Monitoring & Management-Reports</li><li>Automatisiertes Reporting & Visualisierung</li></ul></div>
+      <div class="ai-card"><h3>Datenmanagement & Engineering</h3><ul><li>Datenintegration & ETL-Prozesse</li><li>Data Lakes & Warehouses (PostgreSQL, MongoDB, SAP BW)</li><li>Optimierung von Datenqualität & Pipelines</li></ul></div>
+      <div class="ai-card"><h3>Cloud & Deployment</h3><ul><li>Cloud-Lösungen (Azure, AWS, Vercel)</li><li>MLOps & CI/CD (Docker, Jenkins, Kubernetes)</li><li>Skalierbare Datenarchitekturen</li></ul></div>
+      <div class="ai-card"><h3>Beratung & Training</h3><ul><li>Datengetriebene Strategie-Beratung</li><li>Digitalisierung & Prozessoptimierung</li><li>Workshops & Schulungen (Data Science, KI, Generative AI)</li></ul></div>
+    </div>
+  </section>
 
-  <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">🗣️</div>
-    <h3>AI Agents mit NLP</h3>
-    <p>Preis: €25,000–€45,000</p>
-    <p>Funktionen: Verarbeitung natürlicher Sprache, komplexe Interaktionen</p>
-    <p>Beispiel: Nutzung von NLP-Modellen wie GPT-3</p>
-  </div>
+  <!-- KI-Angebote -->
+  <section id="ai-solutions-de">
+    <h2>KI-Angebote</h2>
+    <div class="grid">
+      <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">🤖</div><h3>Basic AI Agents</h3><p>Preis: €5,000–€20,000</p><p>Funktionen: FAQs beantworten, einfache Datenverarbeitung</p><p>Beispiel: Regelbasierte Systeme ohne Lernen</p><p>Vorteil: Kostengünstig und schnell implementierbar</p></div>
+      <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">🗣️</div><h3>AI Agents mit NLP</h3><p>Preis: €25,000–€45,000</p><p>Funktionen: Verarbeitung natürlicher Sprache, komplexe Interaktionen</p><p>Beispiel: Nutzung von NLP-Modellen wie GPT-3</p></div>
+      <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">🎥</div><h3>AI Agents mit Sprach-/Video-Interaktion</h3><p>Preis: €40,000–€70,000</p><p>Funktionen: Sprach- oder Videoantworten, personalisierte Kommunikation</p><p>Beispiel: Callcenter, personalisierte Sales-Präsentationen</p></div>
+      <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">⚙️</div><h3>AI Agents für Backend-Prozesse</h3><p>Preis: €50,000–€90,000</p><p>Funktionen: Automatisierung interner Prozesse, Datenanalyse</p><p>Beispiel: Integration in CRM- oder ERP-Systeme</p></div>
+      <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">📊</div><h3>Enterprise AI Agents mit Machine Learning</h3><p>Preis: €100,000–€250,000+</p><p>Funktionen: Selbstlernende Systeme, komplexe Entscheidungsfindung</p><p>Beispiel: Große Unternehmen mit umfangreichen Datenanforderungen</p></div>
+    </div>
+    <p style="text-align:center; margin-top:30px;">Wartungskosten: 15–20% der Entwicklungskosten jährlich</p>
+  </section>
 
-  <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">🎥</div>
-    <h3>AI Agents mit Sprach-/Video-Interaktion</h3>
-    <p>Preis: €40,000–€70,000</p>
-    <p>Funktionen: Sprach- oder Videoantworten, personalisierte Kommunikation</p>
-    <p>Beispiel: Callcenter, personalisierte Sales-Präsentationen</p>
-  </div>
+  <!-- Kontakt -->
+  <section id="contact-de">
+    <h2>Kontakt</h2>
+    <div class="contact-info">
+      <p>Adresse: Obere Waibliner Strasse 147, 70374 Stuttgart</p>
+      <p>Email: <a href="mailto:estaghvirou.b@gmail.com">estaghvirou.b@gmail.com</a> | Telefon: <a href="tel:+4917631591931">0049 176 31591931</a></p>
+    </div>
+    <form id="contactFormDe" action="https://formspree.io/f/xeolryra" method="POST">
+      <label for="name-de">Name</label>
+      <input type="text" name="name" id="name-de" required>
+      <label for="email-de">Email</label>
+      <input type="email" name="email" id="email-de" required>
+      <label for="message-de">Nachricht</label>
+      <textarea name="message" id="message-de" rows="5" required></textarea>
+      <button type="submit">Senden</button>
+    </form>
+    <div id="successMessageDe">Vielen Dank! Nachricht gesendet.</div>
+  </section>
 
-  <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">⚙️</div>
-    <h3>AI Agents für Backend-Prozesse</h3>
-    <p>Preis: €50,000–€90,000</p>
-    <p>Funktionen: Automatisierung interner Prozesse, Datenanalyse</p>
-    <p>Beispiel: Integration in CRM- oder ERP-Systeme</p>
-  </div>
+  <!-- Impressum -->
+  <section id="impressum-de">
+    <h2>Impressum</h2>
+    <p style="text-align:center;">
+      <strong class="company">AI & Data Solutions</strong><br>
+      Adresse: Obere Waibliner Strasse 147, 70374 Stuttgart<br>
+      Telefon: 0049 176 31591931<br>
+      Email: <a href="mailto:estaghvirou.b@gmail.com">estaghvirou.b@gmail.com</a>
+    </p>
+  </section>
 
-  <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">📊</div>
-    <h3>Enterprise AI Agents mit Machine Learning</h3>
-    <p>Preis: €100,000–€250,000+</p>
-    <p>Funktionen: Selbstlernende Systeme, komplexe Entscheidungsfindung</p>
-    <p>Beispiel: Große Unternehmen mit umfangreichen Datenanforderungen</p>
-  </div>
+  <!-- Datenschutz -->
+  <section id="datenschutz-de">
+    <h2>Datenschutz</h2>
+    <p style="text-align:center; max-width:800px; margin:0 auto;">
+      Wir nehmen den Schutz Ihrer Daten ernst. Alle Informationen, die über das Kontaktformular übermittelt werden, werden ausschließlich für die Bearbeitung Ihrer Anfrage verwendet.
+    </p>
+  </section>
 </div>
-<p style="text-align:center; margin-top:30px;">Wartungskosten: 15–20% der Entwicklungskosten jährlich</p>
-</section>
 
-<!-- Kontakt / Contact -->
-<section id="contact">
-<h2>Kontakt / Contact</h2>
-<div class="contact-info">
-<p>Adresse: Obere Waibliner Strasse 147, 70374 Stuttgart</p>
-<p>Email: <a href="mailto:estaghvirou.b@gmail.com">estaghvirou.b@gmail.com</a> | Telefon: <a href="tel:+4917631591931">0049 176 31591931</a></p>
+<!-- English Content -->
+<div id="content-en" style="display:none;">
+  <!-- Über uns -->
+  <section id="about-us-en">
+    <h2>About Us</h2>
+    <p><strong class="company">AI & Data Solutions</strong> is a team of experienced Data Analysts, Data Scientists, and consultants with over 15 years of experience in data analysis, statistics, machine learning, data engineering, and generative AI...</p>
+  </section>
+  <!-- Services -->
+  <section id="services-en">
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="ai-card"><h3>Data Science & Analytics</h3><ul><li>Data analysis & statistical modeling</li><li>Ad-hoc analyses & forecasting models</li><li>Classification & prediction models</li></ul></div>
+      <div class="ai-card"><h3>Machine Learning & AI</h3><ul><li>ML & deep learning models</li></ul></div>
+      <div class="ai-card"><h3>Business Intelligence & Reporting</h3><ul><li>Dashboards (Power BI, Tableau, Qlik)</li><li>KPI monitoring & management reports</li><li>Automated reporting & visualization</li></ul></div>
+      <div class="ai-card"><h3>Data Management & Engineering</h3><ul><li>Data integration & ETL processes</li><li>Data lakes & warehouses (PostgreSQL, MongoDB, SAP BW)</li><li>Optimizing data quality & pipelines</li></ul></div>
+      <div class="ai-card"><h3>Cloud & Deployment</h3><ul><li>Cloud solutions (Azure, AWS, Vercel)</li><li>MLOps & CI/CD (Docker, Jenkins, Kubernetes)</li><li>Scalable data architectures</li></ul></div>
+      <div class="ai-card"><h3>Consulting & Training</h3><ul><li>Data-driven strategy consulting</li><li>Digitalization & process optimization</li><li>Workshops & training (Data Science, AI, Generative AI)</li></ul></div>
+    </div>
+  </section>
+
+  <!-- AI Solutions -->
+  <section id="ai-solutions-en">
+    <h2>AI Solutions</h2>
+    <div class="grid">
+      <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">🤖</div><h3>Basic AI Agents</h3><p>Price: €5,000–€20,000</p><p>Functions: Answering FAQs, basic data processing</p><p>Example: Rule-based systems without learning</p><p>Advantage: Cost-effective and quick to implement</p></div>
+      <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">🗣️</div><h3>AI Agents with NLP</h3><p>Price: €25,000–€45,000</p><p>Functions: Understanding and processing natural language, complex interactions</p><p>Example: Using NLP models like GPT-3</p></div>
+      <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">🎥</div><h3>AI Agents with Voice/Video Interaction</h3><p>Price: €40,000–€70,000</p><p>Functions: Voice or video responses, personalized communication</p><p>Example: Call centers, personalized sales presentations</p></div>
+      <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">⚙️</div><h3>AI Agents for Backend Processes</h3><p>Price: €50,000–€90,000</p><p>Functions: Automating internal processes, data analysis</p><p>Example: Integration into CRM or ERP systems</p></div>
+      <div class="ai-card"><div style="font-size:2rem; text-align:center; margin-bottom:10px;">📊</div><h3>Enterprise AI Agents with Machine Learning</h3><p>Price: €100,000–€250,000+</p><p>Functions: Self-learning systems, complex decision-making</p><p>Example: Large companies with extensive data requirements</p></div>
+    </div>
+    <p style="text-align:center; margin-top:30px;">Maintenance costs: typically 15–20% of development costs per year</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact-en">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <p>Address: Obere Waibliner Strasse 147, 70374 Stuttgart</p>
+      <p>Email: <a href="mailto:estaghvirou.b@gmail.com">estaghvirou.b@gmail.com</a> | Phone: <a href="tel:+4917631591931">0049 176 31591931</a></p>
+    </div>
+    <form id="contactFormEn" action="https://formspree.io/f/xeolryra" method="POST">
+      <label for="name-en">Name</label>
+      <input type="text" name="name" id="name-en" required>
+      <label for="email-en">Email</label>
+      <input type="email" name="email" id="email-en" required>
+      <label for="message-en">Message</label>
+      <textarea name="message" id="message-en" rows="5" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <div id="successMessageEn">Thank you! Message sent.</div>
+  </section>
+
+  <!-- Imprint -->
+  <section id="impressum-en">
+    <h2>Imprint</h2>
+    <p style="text-align:center;">
+      <strong class="company">AI & Data Solutions</strong><br>
+      Address: Obere Waibliner Strasse 147, 70374 Stuttgart<br>
+      Phone: 0049 176 31591931<br>
+      Email: <a href="mailto:estaghvirou.b@gmail.com">estaghvirou.b@gmail.com</a>
+    </p>
+  </section>
+
+  <!-- Privacy -->
+  <section id="datenschutz-en">
+    <h2>Privacy</h2>
+    <p style="text-align:center; max-width:800px; margin:0 auto;">
+      We take your data privacy seriously. All information submitted via the contact form is used solely for handling your request.
+    </p>
+  </section>
 </div>
-<form id="contactForm" action="https://formspree.io/f/xeolryra" method="POST">
-<label for="name">Name</label>
-<input type="text" name="name" id="name" required>
-<label for="email">Email</label>
-<input type="email" name="email" id="email" required>
-<label for="message">Nachricht / Message</label>
-<textarea name="message" id="message" rows="5" required></textarea>
-<button type="submit">Senden / Send</button>
-</form>
-<div id="successMessage">Vielen Dank! Nachricht gesendet / Thank you! Message sent.</div>
-</section>
-
-<!-- Impressum / Imprint -->
-<section id="impressum">
-<h2>Impressum / Imprint</h2>
-<p style="text-align:center;">
-<strong class="company">AI & Data Solutions</strong><br>
-Adresse: Obere Waibliner Strasse 147, 70374 Stuttgart<br>
-Telefon: 0049 176 31591931<br>
-Email: <a href="mailto:estaghvirou.b@gmail.com">estaghvirou.b@gmail.com</a>
-</p>
-</section>
-
-<!-- Datenschutz / Privacy -->
-<section id="datenschutz">
-<h2>Datenschutz / Privacy</h2>
-<p style="text-align:center; max-width:800px; margin:0 auto;">
-Wir nehmen den Schutz Ihrer Daten ernst. Alle Informationen, die über das Kontaktformular übermittelt werden, werden ausschließlich für die Bearbeitung Ihrer Anfrage verwendet.<br>
-We take your data privacy seriously. All information submitted via the contact form is used solely for handling your request.
-</p>
-</section>
 
 <!-- Footer Links -->
 <div class="footer-links">
-<a href="#about-us">Über uns / About Us</a> |
-<a href="#services">Leistungen / Services</a> |
-<a href="#ai-solutions">KI-Angebote / AI Solutions</a> |
-<a href="#contact">Kontakt / Contact</a> |
-<a href="#impressum">Impressum / Imprint</a> |
-<a href="#datenschutz">Datenschutz / Privacy</a>
+  <a href="#about-us-de">Über uns</a> | <a href="#about-us-en">About Us</a> |
+  <a href="#services-de">Leistungen</a> | <a href="#services-en">Services</a> |
+  <a href="#ai-solutions-de">KI-Angebote</a> | <a href="#ai-solutions-en">AI Solutions</a> |
+  <a href="#contact-de">Kontakt</a> | <a href="#contact-en">Contact</a>
 </div>
 
 <script>
@@ -283,21 +281,33 @@ const observer = new IntersectionObserver(entries => {
 cards.forEach(card => observer.observe(card));
 
 // Formspree Kontaktformular
-const form = document.getElementById('contactForm');
-const successMessage = document.getElementById('successMessage');
-form.addEventListener('submit', function(e){
-  e.preventDefault(); 
-  const formData = new FormData(form);
-  fetch(form.action, { method: form.method, body: formData, headers:{'Accept':'application/json'} })
-  .then(response=>{
-    if(response.ok){
-      successMessage.classList.add('show');
-      form.reset();
-      setTimeout(()=>successMessage.classList.remove('show'),5000);
-    } else { alert('Fehler beim Senden / Error sending message.'); }
-  })
-  .catch(()=>alert('Fehler beim Senden / Error sending message.'));
-});
+function setupForm(formId, successId){
+  const form = document.getElementById(formId);
+  const successMessage = document.getElementById(successId);
+  form.addEventListener('submit', function(e){
+    e.preventDefault(); 
+    const formData = new FormData(form);
+    fetch(form.action, { method: form.method, body: formData, headers:{'Accept':'application/json'} })
+    .then(response=>{
+      if(response.ok){
+        successMessage.classList.add('show');
+        form.reset();
+        setTimeout(()=>successMessage.classList.remove('show'),5000);
+      } else { alert('Error sending message.'); }
+    })
+    .catch(()=>alert('Error sending message.'));
+  });
+}
+setupForm('contactFormDe','successMessageDe');
+setupForm('contactFormEn','successMessageEn');
+
+// Language Toggle
+const btnDe = document.getElementById('btn-de');
+const btnEn = document.getElementById('btn-en');
+const contentDe = document.getElementById('content-de');
+const contentEn = document.getElementById('content-en');
+btnDe.addEventListener('click', () => { contentDe.style.display='block'; contentEn.style.display='none'; });
+btnEn.addEventListener('click', () => { contentDe.style.display='none'; contentEn.style.display='block'; });
 </script>
 </body>
 </html>
